@@ -5,7 +5,12 @@ const AccessPoint = mongoose.model('AccessPoints',{
   mac: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    validate(value){
+      if(!validator.isMACAddress(value)){
+        throw new Error('Not a MAC address!');
+      }
+    }
   },
   name: {
     type: String,
