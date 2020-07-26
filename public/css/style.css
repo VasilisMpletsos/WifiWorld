@@ -1,0 +1,74 @@
+body {
+  background-color: #000000;
+}
+
+.title{
+  color: white;
+  text-shadow: 5px 5px #7200ff85;
+  margin-bottom: 2%;
+}
+
+.pirate{
+  border-style: outset;
+  border-width: medium;
+  border-color: #007bf382;
+}
+
+label{
+  color: white;
+}
+
+.main{
+  padding-top: 4%;
+}
+
+.form{
+  text-align: center;
+  background-color: #2c60ca3b;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+}
+
+#add{
+  background-color: none;
+  transition: 2s;
+}
+
+input[type=text], select {
+  width: 60%;
+  padding: 12px 20px;
+  margin-top: 1px;
+  margin-bottom: 15px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+button[type=submit] {
+  width: 60%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 30px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.boxes{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+   color: #343652;
+}

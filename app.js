@@ -7,6 +7,8 @@ const AccessPoint = require('./models/wifi');
 const app = express();
 const port = 4444;
 
+app.use(express.static(__dirname + '/public'));
+
 app.use(express.json());
 
 app.listen(port,()=>{
@@ -29,4 +31,8 @@ app.get('/search',(req,res)=>{
     res.status(200).send(wifiPoints);
   })
   .catch((error)=>{res.status(500).send();});
+})
+
+app.get('',(req,res)=>{
+  res.redirect('html/index.html');
 })

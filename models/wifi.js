@@ -12,7 +12,7 @@ const AccessPoint = mongoose.model('AccessPoints',{
       }
     }
   },
-  name: {
+  bssid: {
     type: String,
     required: true
   },
@@ -20,7 +20,7 @@ const AccessPoint = mongoose.model('AccessPoints',{
     type: String,
     trim: true
   },
-  plain:{
+  password:{
     type: String,
     trim: true
   },
