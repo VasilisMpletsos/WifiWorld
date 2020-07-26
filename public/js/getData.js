@@ -19,7 +19,6 @@ $('#search').submit(e => {
     url: '/search',
     data: JSON.stringify(jsonData),
     success: (data) => {
-      console.log(data);
       gotSuccess();
       showResults(data);
     },
