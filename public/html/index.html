@@ -27,7 +27,7 @@
 
 <div class="main">
   <div class="row">
-    <div id="cracked" class="col boxes">
+    <div class="col boxes">
       <div class="form">
         <h1 class="title">Add Cracked Wifi</h1>
         <form action="#" id="add">
@@ -45,20 +45,26 @@
         </form>
       </div>
     </div>
-    <div id="search" class="col boxes">
+    <div class="col boxes">
       <div class="form">
+
         <h1 class="title">Search Wifi</h1>
         <form action="#" id="search">
           <label for="mac">MAC Address:</label><br>
-          <input type="text" name="mac" placeholder="e.g 09-0F-A7-17-90-CF"><br>
+          <input type="text" id="macGet" placeholder="e.g 09-0F-A7-17-90-CF"><br>
           <label for="bssid">Name(bssid):</label><br>
-          <input type="text" name="bssid" placeholder="e.g WifiPlaza">
+          <input type="text" id="bssidGet" placeholder="e.g WifiPlaza">
           <button type="submit" value="Submit">Submit</button>
         </form>
       </div>
+
+      <div id="form2">
+      </div>
+
     </div>
   </div>
 </div>
 <script src="../js/submitData.js"></script>
+<script src="../js/getData.js"></script>
 </body>
 </html>

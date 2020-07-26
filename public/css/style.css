@@ -31,7 +31,25 @@ label{
   border-radius: 20px;
 }
 
+#form2{
+  text-align: center;
+  background-color: transparent;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+}
+
+.table{
+  color: white;
+}
+
 #add{
+  background-color: none;
+  transition: 2s;
+}
+
+#search{
   background-color: none;
   transition: 2s;
 }

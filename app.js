@@ -26,7 +26,7 @@ app.post('/add',(req,res)=>{
   })
 })
 
-app.get('/search',(req,res)=>{
+app.post('/search',(req,res)=>{
   AccessPoint.find(req.body).then((wifiPoints)=>{
     res.status(200).send(wifiPoints);
   })
