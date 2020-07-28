@@ -1,3 +1,5 @@
+require('dotenv').config({path:__dirname+'/global.env'})
+
 const express = require('express');
 const validator = require('validator');
 const chalk = require('chalk');
@@ -62,7 +64,7 @@ app.get('/geolocation',async (req,res)=>{
     method: 'post',
     url: 'http://api.ipstack.com/check',
     params: {
-      access_key: '534a8622ef82dc9478908efdb50bc3a5'
+      access_key: process.env.AUTH_TOKEN
     }
   }).then((response)=>{
     var data = {
