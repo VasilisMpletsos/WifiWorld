@@ -15,6 +15,9 @@ app.listen(port,()=>{
   console.log(`Server is listening to port ${port}`);
 });
 
+// Things to do:
+// 1.Add the possibility to upload or download Capture file!
+
 app.post('/add',(req,res)=>{
   console.log(req.body);
   var mac = req.body.mac;
