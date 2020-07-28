@@ -13,9 +13,20 @@ I am not gonna publish the site, but if you want feel free to copy my work!
 1. MongodDbCompass
 2. Postman
 
-## Istallation
+## Make it work
 After you donwload it , you can go to the terminal, to that folder and write:
 
 ```cmd
+npm install
+```
+
+Next step:
+
+```cmd
 node app.js
+```
+And the go to any web broswer and type:
+
+```cmd
+http://localhost:4444
 ```
