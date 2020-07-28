@@ -6,7 +6,6 @@ $('#add').submit(e => {
   var password = document.getElementById('password').value;
   var location = document.getElementById('location').value;
   var jsonData = {mac,essid,password,location};
-  console.log(jsonData);
    $.ajax({
     type: "POST",
     contentType: "application/json; charset=utf-8",

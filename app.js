@@ -19,7 +19,6 @@ app.listen(port,()=>{
 // 1.Add the possibility to upload or download Capture file!
 
 app.post('/add',(req,res)=>{
-  console.log(req.body);
   var mac = req.body.mac;
   var password = req.body.password;
   var essid = req.body.essid;
