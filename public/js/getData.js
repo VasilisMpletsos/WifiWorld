@@ -3,11 +3,11 @@ $('#search').submit(e => {
 
   // Get the data from the form.
   var mac = document.getElementById('macGet').value;
-  var bssid = document.getElementById('bssidGet').value;
-  if(mac && bssid){
+  var essid = document.getElementById('essidGet').value;
+  if(mac && essid){
     var jsonData = {mac,bssid};
-  }else if(bssid){
-    var jsonData = {bssid};
+  }else if(essid){
+    var jsonData = {essid};
   }else if(mac){
     var jsonData = {mac};
   }else{
@@ -45,12 +45,18 @@ function showResults(data){
   var table = document.createElement('table');
   table.setAttribute('class','table');
   let firstrow = document.createElement('tr');
-  let header1 = document.createElement('th');
-  header1.innerText = 'Password';
-  let header2 = document.createElement('th');
-  header2.innerText = 'Location';
-  firstrow.appendChild(header1);
-  firstrow.appendChild(header2);
+  let headerPass = document.createElement('th');
+  headerPass.innerText = 'Password';
+  let headerLoc = document.createElement('th');
+  headerLoc.innerText = 'Location';
+  let headerMAC = document.createElement('th');
+  headerMAC.innerText = 'MAC';
+  let headerName = document.createElement('th');
+  headerName.innerText = 'ESSID';
+  firstrow.appendChild(headerMAC);
+  firstrow.appendChild(headerName);
+  firstrow.appendChild(headerPass);
+  firstrow.appendChild(headerLoc);
   table.appendChild(firstrow);
   for (i in data){
     let row = document.createElement('tr');
@@ -58,11 +64,18 @@ function showResults(data){
     password.innerText = data[i].password;
     let loc = document.createElement('td');
     loc.innerText = data[i].location;
+    let mac = document.createElement('td');
+    mac.innerText = data[i].mac;
+    let name = document.createElement('td');
+    name.innerText = data[i].essid;
+    row.appendChild(mac);
+    row.appendChild(name);
     row.appendChild(password);
     row.appendChild(loc);
     table.appendChild(row);
   }
   result.appendChild(table);
+  window.scrollTo(0,document.body.scrollHeight);
 }
 
 function failure(){

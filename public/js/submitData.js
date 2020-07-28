@@ -2,11 +2,11 @@ $('#add').submit(e => {
   e.preventDefault();
   // Get the data from the form.
   var mac = document.getElementById('mac').value;
-  var bssid = document.getElementById('bssid').value;
-  var hash = document.getElementById('hash').value;
+  var essid = document.getElementById('essid').value;
   var password = document.getElementById('password').value;
   var location = document.getElementById('location').value;
-  var jsonData = {mac,bssid,hash,password,location};
+  var jsonData = {mac,essid,password,location};
+  console.log(jsonData);
    $.ajax({
     type: "POST",
     contentType: "application/json; charset=utf-8",

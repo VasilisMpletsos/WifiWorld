@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+ <!-- Nav Section -->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <ul class="navbar-nav">
     <li class="nav-item active">
@@ -25,45 +25,75 @@
   </ul>
 </nav>
 
+
+ <!-- Body Section -->
 <div class="main">
+  <div class="row">
+    <div class="notes">
+      This site is aiming in creating a global database for the aspiring hackers.
+      If you have cracked a wifi password or searching for one, then this is the website your are looking for.
+      The only thing you will have to do is add the data of the wifi you have cracked to the one form, or if you
+      are looking for the password just type the <u><bold>MAC address</bold></u> or the <u><bold>ESSID</bold></u>
+      and all the avaiable matching data from the database will show up!
+      <div class="subnote">
+        <u>*Before adding check if there is already  the access point data you are hacked.</u>
+        <br>
+        <svg width="90" height="20">
+        <rect x="10" rx="8" ry="20" width="80" height="20"
+        style="fill:red;stroke:black;stroke-width:1;opacity:0.5" />
+        </svg>
+        Red means something is wrong, Try Again!
+        <svg width="90" height="20">
+        <rect x="10" rx="8" ry="20" width="80" height="20"
+        style="fill:#b5ff01;stroke:black;stroke-width:1;opacity:0.5" />
+        </svg>
+        Green means that query was excecuted succesfully!
+      </div>
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col boxes">
       <div class="form">
-        <h1 class="title">Add Cracked Wifi</h1>
+        <h1 class="title">Add Or Update Cracked Wifi</h1>
         <form action="#" id="add">
-          <label for="mac">MAC Address:</label><br>
-          <input type="text" id="mac" placeholder="e.g 00-FF-A7-67-39-6C"><br>
-          <label for="bssid">Name(bssid):</label><br>
-          <input type="text" id="bssid" placeholder="e.g Wifi128"><br>
-          <label for="hash">Hash:</label><br>
-          <input type="text" id="hash"><br>
+          <label for="mac">[Required] MAC Address:</label><br>
+          <input type="text" id="mac" autocomplete="off" placeholder="e.g 00-FF-A7-67-39-6C" required><br>
+          <label for="essid">[Required] Name:</label><br>
+          <input type="text" id="essid" autocomplete="off" placeholder="e.g Wifi128" required><br>
           <label for="password">Plain Password:</label><br>
-          <input type="text" id="password" placeholder="e.g password1234"><br>
+          <input type="text" id="password" autocomplete="off" placeholder="e.g password1234"><br>
           <label for="location">Location:</label><br>
-          <input type="text" id="location" placeholder="e.g Thessaloniki"><br>
+          <input type="text" id="location" autocomplete="off" placeholder="e.g Thessaloniki"><br>
           <button type="submit">Submit</button>
         </form>
       </div>
     </div>
     <div class="col boxes">
       <div class="form">
-
         <h1 class="title">Search Wifi</h1>
         <form action="#" id="search">
           <label for="mac">MAC Address:</label><br>
           <input type="text" id="macGet" placeholder="e.g 09-0F-A7-17-90-CF"><br>
-          <label for="bssid">Name(bssid):</label><br>
-          <input type="text" id="bssidGet" placeholder="e.g WifiPlaza">
+          <label for="essidGet">Name:</label><br>
+          <input type="text" id="essidGet" placeholder="e.g WifiPlaza">
           <button type="submit" value="Submit">Submit</button>
         </form>
       </div>
-
-      <div id="form2">
-      </div>
-
     </div>
   </div>
+
+  <div class="row">
+    <div class="container">
+      <div id="form2">
+      </div>
+    </div>
+  </div>
+
 </div>
+
+ <!-- Script Section -->
 <script src="../js/submitData.js"></script>
 <script src="../js/getData.js"></script>
 </body>

@@ -16,13 +16,29 @@ app.listen(port,()=>{
 });
 
 app.post('/add',(req,res)=>{
-  const wifi = new AccessPoint(req.body);
-  wifi.save().then(()=>{
-    console.log(chalk.green.inverse('New Wifi Point Registered!'))
-    res.status(201).send('Done!');
-  }).catch((error)=>{
-    console.log(chalk.red.inverse('Something has gone wrong on inserting the wifi data!'));
-    res.status(400).send('Error!');
+  console.log(req.body);
+  var mac = req.body.mac;
+  var password = req.body.password;
+  var essid = req.body.essid;
+  var location = req.body.location;
+  AccessPoint.find({mac: mac}).then((data)=>{
+    if(data.length === 0){
+      const wifi = new AccessPoint(req.body);
+      wifi.save().then(()=>{
+      console.log(chalk.green.inverse('New Wifi Point Registered!'));
+      res.status(201).send('Done!');
+      }).catch((error)=>{
+      console.log(chalk.red.inverse('Something has gone wrong on inserting the wifi data!'));
+      res.status(400).send('Error!');
+      })
+    }else{
+      AccessPoint.updateOne({mac},{essid, password, location}).then(()=>{
+      res.status(201).send('Done!');
+      }).catch((error)=>{
+      console.log(chalk.red.inverse('Something has gone wrong on inserting the wifi data!'));
+      res.status(400).send('Error!');
+      });
+    }
   })
 })
 

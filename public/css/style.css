@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #000000;
 }
@@ -31,13 +35,37 @@ label{
   border-radius: 20px;
 }
 
-#form2{
-  text-align: center;
-  background-color: transparent;
-  padding-top: 4%;
-  padding-bottom: 4%;
+.notes{
+  color: white;
+  text-align: justify;
+  font-variant: small-caps;
+  font-style: italic;
+  font-weight: normal;
+  font-family: serif;
+  background-color: #719bb975;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 8%;
+  padding-right: 8%;
   backdrop-filter: blur(8px);
   border-radius: 20px;
+  width: 100%;
+  margin-bottom: 2%;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.subnote{
+  text-align: center;
+  margin-top: 1%;
+}
+
+#form2{
+  margin-top: 5%;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .table{
