@@ -4,7 +4,7 @@ $('#search').submit(e => {
   // Get the data from the form.
   var mac = document.getElementById('macGet').value;
   var essid = document.getElementById('essidGet').value;
-  if(mac && essid){
+  if(mac & essid){
     var jsonData = {mac,bssid};
   }else if(essid){
     var jsonData = {essid};
@@ -55,11 +55,14 @@ function showResults(data){
   headerName.innerText = 'ESSID';
   let headerFlag = document.createElement('th');
   headerFlag.innerText = 'Flag';
+  let closeButton = document.createElement('th');
+  closeButton.innerText = 'Remove';
   firstrow.appendChild(headerMAC);
   firstrow.appendChild(headerName);
   firstrow.appendChild(headerPass);
   firstrow.appendChild(headerLoc);
   firstrow.appendChild(headerFlag);
+  firstrow.appendChild(closeButton);
   table.appendChild(firstrow);
   for (i in data){
     let row = document.createElement('tr');
@@ -73,11 +76,17 @@ function showResults(data){
     name.innerText = data[i].essid;
     let flag = document.createElement('td');
     flag.innerHTML = `<img width="50" height="30" src="${data[i].flag}"></img>`;
+    let close = document.createElement('td');
+    close.innerHTML = `<button type="button">X</button>`;
+    close.addEventListener('click',()=>{
+      row.remove();
+    })
     row.appendChild(mac);
     row.appendChild(name);
     row.appendChild(password);
     row.appendChild(loc);
     row.appendChild(flag);
+    row.appendChild(close);
     table.appendChild(row);
   }
   result.appendChild(table);

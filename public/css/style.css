@@ -105,6 +105,19 @@ button[type=submit] {
   cursor: pointer;
 }
 
+button[type=button] {
+  width: 40%;
+  height: 40%;
+  color: white;
+  font-family:serif;
+  font-size: 20px;
+  text-shadow: 1px 1px #3401ff;
+  background-color: red;
+  border-radius: 15%;
+  border: none;
+  cursor: pointer;
+}
+
 input[type=submit]:hover {
   background-color: #45a049;
 }
