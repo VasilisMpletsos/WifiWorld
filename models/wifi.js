@@ -21,7 +21,9 @@ const AccessPoint = mongoose.model('AccessPoints',{
     trim: true
   },
   location:{
-    //Maybe i could make location with coordinates
+    type: String
+  },
+  flag:{
     type: String
   }
 })

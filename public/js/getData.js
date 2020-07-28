@@ -53,10 +53,13 @@ function showResults(data){
   headerMAC.innerText = 'MAC';
   let headerName = document.createElement('th');
   headerName.innerText = 'ESSID';
+  let headerFlag = document.createElement('th');
+  headerFlag.innerText = 'Flag';
   firstrow.appendChild(headerMAC);
   firstrow.appendChild(headerName);
   firstrow.appendChild(headerPass);
   firstrow.appendChild(headerLoc);
+  firstrow.appendChild(headerFlag);
   table.appendChild(firstrow);
   for (i in data){
     let row = document.createElement('tr');
@@ -68,10 +71,13 @@ function showResults(data){
     mac.innerText = data[i].mac;
     let name = document.createElement('td');
     name.innerText = data[i].essid;
+    let flag = document.createElement('td');
+    flag.innerHTML = `<img width="50" height="30" src="${data[i].flag}"></img>`;
     row.appendChild(mac);
     row.appendChild(name);
     row.appendChild(password);
     row.appendChild(loc);
+    row.appendChild(flag);
     table.appendChild(row);
   }
   result.appendChild(table);
