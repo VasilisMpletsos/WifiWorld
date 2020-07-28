@@ -30,3 +30,9 @@ And the go to any web broswer and type:
 ```cmd
 http://localhost:4444
 ```
+
+## Things to Do:
+1. Make possible to Upload and Download capture files
+2. Add maybe hackers score?
+
+Feel free to make pull requests or raise issues to talk about and code together!
