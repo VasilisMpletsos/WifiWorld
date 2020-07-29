@@ -53,15 +53,12 @@ function showResults(data){
   headerMAC.innerText = 'MAC';
   let headerName = document.createElement('th');
   headerName.innerText = 'ESSID';
-  let headerFlag = document.createElement('th');
-  headerFlag.innerText = 'Flag';
   let closeButton = document.createElement('th');
   closeButton.innerText = 'Remove';
   firstrow.appendChild(headerMAC);
   firstrow.appendChild(headerName);
   firstrow.appendChild(headerPass);
   firstrow.appendChild(headerLoc);
-  firstrow.appendChild(headerFlag);
   firstrow.appendChild(closeButton);
   table.appendChild(firstrow);
   for (i in data){
@@ -74,8 +71,6 @@ function showResults(data){
     mac.innerText = data[i].mac;
     let name = document.createElement('td');
     name.innerText = data[i].essid;
-    let flag = document.createElement('td');
-    flag.innerHTML = `<img width="50" height="30" src="${data[i].flag}"></img>`;
     let close = document.createElement('td');
     close.innerHTML = `<button type="button">X</button>`;
     close.addEventListener('click',()=>{
@@ -85,7 +80,6 @@ function showResults(data){
     row.appendChild(name);
     row.appendChild(password);
     row.appendChild(loc);
-    row.appendChild(flag);
     row.appendChild(close);
     table.appendChild(row);
   }

@@ -56,25 +56,5 @@ app.post('/search',(req,res)=>{
 })
 
 app.get('',(req,res)=>{
-  res.redirect('html/index.html');
-})
-
-app.get('/geolocation',async (req,res)=>{
-  return await axios({
-    method: 'post',
-    url: 'http://api.ipstack.com/check',
-    params: {
-      access_key: process.env.AUTH_TOKEN
-    }
-  }).then((response)=>{
-    var data = {
-      continent: response.data.continent_name,
-      country: response.data.country_name,
-      region: response.data.region_name,
-      flag: response.data.location.country_flag
-    }
-    res.status(200).send(data);
-  }).catch(()=>{
-    res.staus(400).send('Error!');
-  });
+  res.redirect('./html/index.html');
 })

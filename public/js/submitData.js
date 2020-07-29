@@ -4,28 +4,18 @@ $('#add').submit( e => {
   var mac = document.getElementById('mac').value;
   var essid = document.getElementById('essid').value;
   var password = document.getElementById('password').value;
-  var {loc,flag} = $.ajax({
-    type: "GET",
-    url: '/geolocation',
-    success: (data)=>{
-      var flag = data.flag;
-      var location = data.continent+'/'+data.country+'/'+data.region;
-      var jsonData = {mac,essid,password,location,flag};
-      console.log(jsonData);
-       $.ajax({
-        type: "POST",
-        contentType: "application/json; charset=utf-8",
-        url: '/add',
-        data: JSON.stringify(jsonData),
-        success: () => {
-          suc();
-        },
-        error: ()=>{
-           fail();
-        }
-      })
-    },error: ()=>{
-      fail();
+  var location = document.getElementById('location').value;
+  var jsonData = {mac,essid,password,location};
+  $.ajax({
+    type: "POST",
+    contentType: "application/json; charset=utf-8",
+    url: '/add',
+    data: JSON.stringify(jsonData),
+    success: () => {
+      suc();
+    },
+    error: ()=>{
+       fail();
     }
   })
 });
