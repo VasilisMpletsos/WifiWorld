@@ -94,6 +94,19 @@ input[type=text], select {
   text-align: center;
 }
 
+input[type=file], select {
+  width: 60%;
+  color: white;
+  padding: 12px 20px;
+  margin-top: 1px;
+  margin-bottom: 15px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
 button[type=submit] {
   width: 60%;
   background-color: #4CAF50;

@@ -23,8 +23,9 @@ const AccessPoint = mongoose.model('AccessPoints',{
   location:{
     type: String
   },
-  flag:{
-    type: String
+  capture:{
+    type: String,
+    unique: true
   }
 })
 
