@@ -74,7 +74,7 @@ app.post('/add',(req,res)=>{
     var info = {
       info: `<div class="row">
         <div class="failure">
-          Something wnt wrong!
+          Something went wrong!
           </div>
         </div>
         `
@@ -87,7 +87,17 @@ app.post('/search',(req,res)=>{
   AccessPoint.find(req.body).then((wifiPoints)=>{
     res.status(200).send(wifiPoints);
   })
-  .catch((error)=>{res.status(500).send();});
+  .catch((error)=>{
+    var info = {
+      info: `<div class="row">
+        <div class="failure">
+          Something went wrong!
+          </div>
+        </div>
+        `
+    }
+    res.status(400).send(index(info));
+  });
 })
 
 app.get('',(req,res)=>{
@@ -96,4 +106,8 @@ app.get('',(req,res)=>{
 
 app.get('/hash/:file',(req,res)=>{
   res.status(200).download(`./public/captures/${req.params.file}`);
+})
+
+app.get('/rockyou',(req,res)=>{
+  res.status(200).download('./public/passwords/rockyou.txt');
 })

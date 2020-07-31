@@ -1,6 +1,9 @@
 html{
   scroll-behavior: smooth;
   font-family: serif;
+  font-style: italic;
+  font-size-adjust: auto;
+  font-variant: small-caps;
 }
 
 body {
@@ -67,7 +70,7 @@ label{
   padding-right: 8%;
   backdrop-filter: blur(8px);
   border-radius: 20px;
-  width: 38%;
+  width: 100%;
   margin-bottom: 2%;
   margin-left: 6%;
   margin-right: 6%;
@@ -124,6 +127,7 @@ input[type=text], select {
   text-align: center;
 }
 
+
 input[type=file], select {
   width: 60%;
   color: white;
@@ -160,4 +164,26 @@ input[type=submit]:hover {
 ::-webkit-input-placeholder {
    text-align: center;
    color: #343652;
+}
+
+.signature{
+  text-align: right;
+  color: white;
+  margin-right: 3%;
+  margin-bottom: 1%;
+  width: 100%;
+}
+
+.row{
+  /*
+    Just because it is a little bigger form frame i don;w know why maybe it is a bug
+    nut when i add this it fixes it self!
+  */
+  margin-right: 0%;
+}
+
+.dropdown-menu{
+  background-color: black;
+  text-align: center;
+  min-width: 20rem;
 }

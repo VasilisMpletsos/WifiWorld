@@ -76,12 +76,12 @@ function showResults(data){
     name.innerText = data[i].essid;
     let link = document.createElement('td');
     if(data[i].capture){
-        link.innerHTML = `<a href="/hash/${data[i].capture}"><i class="fas fa-download"></i></span></a>`;
+        link.innerHTML = `<a href="/hash/${data[i].capture}"><i style="font-size:20px" class="fas fa-download"></i></span></a>`;
     }else{
-        link.innerHTML = '<i class="fas fa-ban"></i>';
+        link.innerHTML = '<i style="font-size:20px" class="fas fa-ban"></i>';
     }
     let close = document.createElement('td');
-    close.innerHTML = '<a href="#form2"><i class="material-icons">delete_sweep</i></a>';
+    close.innerHTML = '<a href="#form2"><i style="font-size:16px" class="fas fa-times"></i></a>';
     close.addEventListener('click',()=>{
       row.remove();
     })
