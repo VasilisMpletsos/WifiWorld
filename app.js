@@ -47,14 +47,14 @@ app.post('/add',(req,res)=>{
       const wifi = new AccessPoint(write);
       wifi.save().then(()=>{
         if(fileType ==='cap' | 'hccapx'){
-            fs.writeFileSync(__dirname +'\\public\\captures\\'+capture,buffer);
+            fs.writeFile(__dirname +'\\public\\captures\\'+capture,buffer,()=>{console.log(chalk.green.inverse('New Capture File!'))});
         }
         console.log(chalk.green.inverse('New Wifi Point Registered!'));
       })
     }else{
       AccessPoint.updateOne({mac},write).then(()=>{
         if(fileType ==='cap' | 'hccapx'){
-            fs.writeFileSync(__dirname +'\\public\\captures\\'+capture,buffer);
+            fs.writeFile(__dirname +'\\public\\captures\\'+capture,buffer,()=>{console.log(chalk.green.inverse('New Capture File!'))});
         }
         console.log(chalk.green.inverse('Wifi Point Updated!'));
     })

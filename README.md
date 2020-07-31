@@ -31,6 +31,7 @@ http://localhost:4444
 ```
 
 ## Things to Do:
-- Return page with messages!
+1. Style it better!
+2. Add maybe Users and score for how many passwords they have uploaded?
 
 Feel free to make pull requests or raise issues to talk about and code together!
