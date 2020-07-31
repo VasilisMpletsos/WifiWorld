@@ -49,10 +49,10 @@ app.post('/add',(req,res)=>{
             fs.writeFileSync(__dirname +'\\public\\captures\\'+capture,buffer);
         }
         console.log(chalk.green.inverse('New Wifi Point Registered!'));
-        res.status(201).send('Success!');
+        res.status(201).send();
       })
     }else{
-      AccessPoint.updateOne({mac},{essid, password, location}).then(()=>{
+      AccessPoint.updateOne({mac},write).then(()=>{
         if(fileType ==='cap' | 'hccapx'){
             fs.writeFileSync(__dirname +'\\public\\captures\\'+capture,buffer);
         }
@@ -78,6 +78,5 @@ app.get('',(req,res)=>{
 })
 
 app.get('/hash/:file',(req,res)=>{
-  console.log(req.params.file);
   res.status(200).download(`./public/captures/${req.params.file}`);
 })

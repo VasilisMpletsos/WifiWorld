@@ -77,9 +77,11 @@ function showResults(data){
     let link = document.createElement('td');
     if(data[i].capture){
         link.innerHTML = `<a href="/hash/${data[i].capture}"><i class="fas fa-download"></i></span></a>`;
+    }else{
+        link.innerHTML = '<i class="fas fa-ban"></i>';
     }
     let close = document.createElement('td');
-    close.innerHTML = `<button type="button"/>X</button>`;
+    close.innerHTML = '<a href="#form2"><i class="material-icons">delete_sweep</i></a>';
     close.addEventListener('click',()=>{
       row.remove();
     })
@@ -101,15 +103,4 @@ function failure(){
   setTimeout(()=>{
     form.style.backgroundColor = 'transparent';
   },3000)
-}
-
-function httpGetAsync(theUrl, callback)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() {
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.responseText);
-    }
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous
-    xmlHttp.send(null);
 }

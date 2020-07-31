@@ -118,3 +118,5 @@ dist
 
 # My ignores
 *.ini
+*.cap
+*.hccpax
