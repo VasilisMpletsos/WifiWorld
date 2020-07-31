@@ -31,7 +31,6 @@ http://localhost:4444
 ```
 
 ## Things to Do:
-- Make possible to Upload and Download capture files
-- Add maybe hackers score?
+- Return page with messages!
 
 Feel free to make pull requests or raise issues to talk about and code together!

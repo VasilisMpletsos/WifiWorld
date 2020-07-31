@@ -53,12 +53,15 @@ function showResults(data){
   headerMAC.innerText = 'MAC';
   let headerName = document.createElement('th');
   headerName.innerText = 'ESSID';
+  let download = document.createElement('th');
+  download.innerText = 'Capture';
   let closeButton = document.createElement('th');
   closeButton.innerText = 'Remove';
   firstrow.appendChild(headerMAC);
   firstrow.appendChild(headerName);
   firstrow.appendChild(headerPass);
   firstrow.appendChild(headerLoc);
+  firstrow.appendChild(download);
   firstrow.appendChild(closeButton);
   table.appendChild(firstrow);
   for (i in data){
@@ -71,8 +74,12 @@ function showResults(data){
     mac.innerText = data[i].mac;
     let name = document.createElement('td');
     name.innerText = data[i].essid;
+    let link = document.createElement('td');
+    if(data[i].capture){
+        link.innerHTML = `<a href="/hash/${data[i].capture}"><i class="fas fa-download"></i></span></a>`;
+    }
     let close = document.createElement('td');
-    close.innerHTML = `<button type="button">X</button>`;
+    close.innerHTML = `<button type="button"/>X</button>`;
     close.addEventListener('click',()=>{
       row.remove();
     })
@@ -80,6 +87,7 @@ function showResults(data){
     row.appendChild(name);
     row.appendChild(password);
     row.appendChild(loc);
+    row.appendChild(link);
     row.appendChild(close);
     table.appendChild(row);
   }
@@ -93,4 +101,15 @@ function failure(){
   setTimeout(()=>{
     form.style.backgroundColor = 'transparent';
   },3000)
+}
+
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous
+    xmlHttp.send(null);
 }

@@ -34,7 +34,8 @@ app.post('/add',(req,res)=>{
   var location = req.body.location;
   if(req.files){
     var file = req.files.file;
-    var capture = file.name;
+    var fileType = file.name.split('.').pop();
+    var capture = mac + '.' +fileType;
     var buffer = file.data;
     var write = {mac,essid,password,location,capture};
   }else{
@@ -44,16 +45,16 @@ app.post('/add',(req,res)=>{
     if(data.length === 0){
       const wifi = new AccessPoint(write);
       wifi.save().then(()=>{
-        if(capture){
-            fs.writeFileSync(__dirname +'\\public\\captures\\'+ capture,buffer);
+        if(fileType ==='cap' | 'hccapx'){
+            fs.writeFileSync(__dirname +'\\public\\captures\\'+capture,buffer);
         }
         console.log(chalk.green.inverse('New Wifi Point Registered!'));
         res.status(201).send('Success!');
       })
     }else{
       AccessPoint.updateOne({mac},{essid, password, location}).then(()=>{
-        if(capture){
-            fs.writeFileSync(__dirname +'\\public\\captures\\'+ capture,buffer);
+        if(fileType ==='cap' | 'hccapx'){
+            fs.writeFileSync(__dirname +'\\public\\captures\\'+capture,buffer);
         }
         console.log(chalk.green.inverse('Wifi Point Updated!'));
         res.status(201).send('Success!');
@@ -61,6 +62,7 @@ app.post('/add',(req,res)=>{
     }
   }).catch((error)=>{
     console.log(chalk.green.inverse('Something went wrong'));
+    console.log(error);
   })
 })
 
@@ -76,5 +78,6 @@ app.get('',(req,res)=>{
 })
 
 app.get('/hash/:file',(req,res)=>{
+  console.log(req.params.file);
   res.status(200).download(`./public/captures/${req.params.file}`);
 })
