@@ -1,5 +1,6 @@
 html{
   scroll-behavior: smooth;
+  font-family: serif;
 }
 
 body {
@@ -55,9 +56,38 @@ label{
   margin-right: 6%;
 }
 
-.subnote{
+.success{
+  color: white;
   text-align: center;
-  margin-top: 1%;
+  font-family: serif;
+  background-color: #26b52787;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 8%;
+  padding-right: 8%;
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  width: 38%;
+  margin-bottom: 2%;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.failure{
+  color: white;
+  text-align: center;
+  font-family: serif;
+  background-color: #b5262687;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 8%;
+  padding-right: 8%;
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 2%;
+  margin-left: 6%;
+  margin-right: 6%;
 }
 
 #form2{

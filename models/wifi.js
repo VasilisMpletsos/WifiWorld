@@ -24,8 +24,7 @@ const AccessPoint = mongoose.model('AccessPoints',{
     type: String
   },
   capture:{
-    type: String,
-    unique: true
+    type: String
   }
 })
 

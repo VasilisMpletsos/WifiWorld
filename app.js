@@ -10,6 +10,7 @@ const fileupload = require('express-fileupload');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const app = express();
+const index = require('./public/html/index');
 const port = 4444;
 
 var capture = 'vasilis.txt';
@@ -49,7 +50,6 @@ app.post('/add',(req,res)=>{
             fs.writeFileSync(__dirname +'\\public\\captures\\'+capture,buffer);
         }
         console.log(chalk.green.inverse('New Wifi Point Registered!'));
-        res.status(201).send();
       })
     }else{
       AccessPoint.updateOne({mac},write).then(()=>{
@@ -57,12 +57,29 @@ app.post('/add',(req,res)=>{
             fs.writeFileSync(__dirname +'\\public\\captures\\'+capture,buffer);
         }
         console.log(chalk.green.inverse('Wifi Point Updated!'));
-        res.status(201).send('Success!');
     })
     }
+    var info = {
+      info: `<div class="row">
+        <div class="success">
+          Operation was Succesfull!
+          </div>
+        </div>
+        `
+    }
+    res.status(200).send(index(info));
   }).catch((error)=>{
     console.log(chalk.green.inverse('Something went wrong'));
     console.log(error);
+    var info = {
+      info: `<div class="row">
+        <div class="failure">
+          Something wnt wrong!
+          </div>
+        </div>
+        `
+    }
+    res.status(400).send(index(info));
   })
 })
 
@@ -74,7 +91,7 @@ app.post('/search',(req,res)=>{
 })
 
 app.get('',(req,res)=>{
-  res.status(200).redirect('./html/index.html');
+  res.status(200).send(index({info: ''}));
 })
 
 app.get('/hash/:file',(req,res)=>{
