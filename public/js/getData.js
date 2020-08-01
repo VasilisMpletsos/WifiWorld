@@ -7,7 +7,7 @@ $('#search').submit(e => {
   if(mac & essid){
     var jsonData = {mac,bssid};
   }else if(essid){
-    var jsonData = {essid};
+    var jsonData = {essid: {$regex: `${essid}`}};
   }else if(mac){
     var jsonData = {mac};
   }else{

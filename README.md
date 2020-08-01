@@ -1,7 +1,7 @@
 # Wifi World
 
 This is prototype site in order to make informations about many wifi global and have access to wifi in many towns of the world if possible!
-I am not gonna publish the site though because i don't know if it is legal, but if you want feel free to copy my work!
+I am not gonna publish the site though because i don't know if it is legal, but if you want, feel free to copy my work!
 
 ## Requirments
 - MongoDB
