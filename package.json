@@ -1,0 +1,31 @@
+{
+  "name": "wifi-world",
+  "version": "1.0.0",
+  "description": "This is prototype site in order to make informations about many wifi global and have access to wifi in many towns of the world if possible!\r I am not gonna publish the site though because i don't know if it is legal, but if you want, feel free to copy my work!",
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.8",
+    "file-upload": "^0.0.0",
+    "mongoose": "^5.9.25",
+    "validator": "^13.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VasilisMpletsos/Wifi_Plaza.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VasilisMpletsos/Wifi_Plaza/issues"
+  },
+  "homepage": "https://github.com/VasilisMpletsos/Wifi_Plaza#readme"
+}
