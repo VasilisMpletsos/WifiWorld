@@ -43,6 +43,6 @@ Feel free to make pull requests or raise issues to talk about and code together!
 
 ## Images
 
-![Alt text](./assets/image1.jpg?raw=true)
-
 ![Alt text](./assets/image2.jpg?raw=true)
+
+![Alt text](./assets/image1.jpg?raw=true)
