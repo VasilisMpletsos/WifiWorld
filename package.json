@@ -4,7 +4,7 @@
   "description": "This is prototype site in order to make informations about many wifi global and have access to wifi in many towns of the world if possible!\r I am not gonna publish the site though because i don't know if it is legal, but if you want, feel free to copy my work!",
   "main": "app.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
     "dotenv": "^8.2.0",
